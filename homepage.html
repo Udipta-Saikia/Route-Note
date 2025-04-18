@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel-Map JOURNAL</title>
+
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="home.css" />
+    <script type="module" src="homepage.js"></script>
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="top-nav" id="navbar">
+      <div class="logo" onclick="location.href = 'index.html'">Route-Note</div>
+      <div class="nav-links">
+        <button id="trackJourney" class="nav-btn">Track Journey</button>
+        <button id="previousJournal" class="nav-btn">Previous Journals</button>
+        <button id="logout" class="nav-btn">Logout</button>
+      </div>
+    </header>
+
+    <!-- Main Section with User Info -->
+    <main>
+      <div class="info-container">
+        <h1>Welcome to the Journal</h1>
+        <div class="info-item">
+          First Name: <span id="loggedUserFName"></span>
+        </div>
+        <div class="info-item">
+          Last Name: <span id="loggedUserLName"></span>
+        </div>
+        <div class="info-item">Email: <span id="loggedUserEmail"></span></div>
+      </div>
+
+      <!-- Welcome Message -->
+      <div class="welcome-message">
+        <p>
+          👋 Welcome back to <strong>Route-Note</strong>! We're excited to have
+          you on this journey. Start by clicking
+          <strong>"Track Journey"</strong> to begin documenting your new
+          adventures — pin locations on the map, upload your favorite photos,
+          and write down memories that matter. Want to revisit your past
+          travels? Just hit <strong>"Previous Journals"</strong> and relive the
+          magic. Wherever you go, your story starts here. Happy exploring! 🗺️✨
+        </p>
+
+        <!-- Animated Image Slider -->
+        <div class="welcome-images-slider">
+          <div class="slider-track">
+            <div
+              class="welcome-image"
+              style="background-image: url('img/mt.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/ocean.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/tj.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/boat.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/mt.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/ocean.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/tj.jpg')"
+            ></div>
+            <div
+              class="welcome-image"
+              style="background-image: url('img/boat.jpg')"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div>© 2025 Travel Journal. All rights reserved.</div>
+      <div class="social-icons">
+        <a href="https://instagram.com/justsul" target="_blank">
+          <img src="img/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://github.com/Udipta-Saikia/map-journal" target="_blank">
+          <img src="img/github.svg" alt="GitHub" />
+        </a>
+      </div>
+    </footer>
+
+    <!-- Scroll Shrink Navbar Script -->
+    <script>
+      window.onscroll = function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("shrink");
+        } else {
+          navbar.classList.remove("shrink");
+        }
+      };
+    </script>
+  </body>
+</html>
