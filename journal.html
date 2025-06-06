@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A personal travel journal to capture your adventures with photos, descriptions, and locations."
+    />
+    <title>Your Journal</title>
+
+    <!-- Fonts and Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="journal.css" />
+  </head>
+
+  <body>
+    <!-- Header Section -->
+    <header class="top-nav" id="navbar">
+      <div
+        class="logo"
+        onclick="location.href = 'track.html'"
+        role="button"
+        aria-label="Go to Tracker Page"
+      >
+        Route-Note
+      </div>
+      <div class="nav-links">
+        <div class="nav-mini-btn" 
+        onclick="window.location.href='trail.html'"
+        role ="button" 
+        aria-label="Go to path Page" > Show Journey
+      </div>
+      <div
+        class="nav-mini-btn"
+        onclick="window.location.href='track.html'"
+        role="button"
+        aria-label="Go to Tracker Page"
+      >
+        Track Your Journey
+      </div>
+      <div class="auth-container">
+        <div class="auth-box">
+          <div class="user-menu-wrap" id="profileMenu">
+            <div class="mini-photo-wrapper">
+              <img class="mini-photo" id="miniPhotoAvtar" />
+            </div>
+            <!--DROP DOWN MENU -->
+            <div class="menu-container" id="dropdownMenu">
+              <ul class="user-menu">
+                <div class="profile-highlight">
+                  <img
+                    id="profileAvatar"
+                    class="avatar-img"
+                    alt="User Avatar"
+                  />
+                  <div class="details">
+                    <div id="profile-name">Loading...</div>
+                    <div id="profile-email">Loading...</div>
+                  </div>
+                </div>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="index.html">Home</a>
+                </li>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="journal.html"
+                    >Your Journals</a
+                  >
+                </li>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="#">User Settings</a>
+                </li>
+                <div class="footer">
+                  <li class="user-menu__item">
+                    <a
+                      class="user-menu-link"
+                      href="#"
+                      id="logoutBtn"
+                      style="color: #f44336"
+                      >Logout</a
+                    >
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <section class="main-container">
+      <div class="header-content">
+        <h2>Your Travel Journal</h2>
+        <p>
+          Explore the memories you've captured along your journey, with photos,
+          descriptions, and map locations.
+        </p>
+      </div>
+
+      <div class="entry-container" id="journalEntries">
+        <!-- Journal Entries will be dynamically added here by journal.js -->
+      </div>
+    </section>
+
+    <!-- 🔍 Modal Popup for Entry Details -->
+    <div id="journalModal" class="journal-modal">
+      <div class="journal-modal-content">
+        <span class="close-modal" id="closeModalBtn" aria-label="Close modal"
+          >&times;</span
+        >
+        <div id="modalContent">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-text">© 2025 Travel Journal. All rights reserved.</div>
+    <div class="social-icons">
+      <a
+        href="https://instagram.com"
+        target="_blank"
+        aria-label="Instagram Profile"
+      >
+        <img src="img/instagram.svg" alt="Instagram" width="35" height="35" />
+      </a>
+      <a
+        href="https://github.com"
+        target="_blank"
+        aria-label="GitHub Repository"
+      >
+        <img src="img/github.svg" alt="GitHub" width="35" height="35" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+    <!-- Scroll Shrink Navbar Script -->
+    <script>
+      window.onscroll = function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("shrink");
+        } else {
+          navbar.classList.remove("shrink");
+        }
+      };
+    </script>
+
+    <!-- Firebase Journal Logic -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script type="module" src="journal.js"></script>
+  </body>
+</html>

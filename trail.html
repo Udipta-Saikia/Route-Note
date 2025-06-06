@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Path Tracker</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="trail.css" />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="top-nav" id="navbar">
+      <div class="logo" onclick="location.href = 'journal.html'">
+        Route-Note
+      </div>
+
+      <div class="auth-container">
+        <div class="auth-box">
+          <div class="user-menu-wrap" id="profileMenu">
+            <div class="mini-photo-wrapper">
+              <img class="mini-photo" id="miniPhotoAvtar" />
+            </div>
+            <!--DROP DOWN MENU -->
+            <div class="menu-container" id="dropdownMenu">
+              <ul class="user-menu">
+                <div class="profile-highlight">
+                  <img
+                    id="profileAvatar"
+                    class="avatar-img"
+                    alt="User Avatar"
+                  />
+                  <div class="details">
+                    <div id="profile-name">Loading...</div>
+                    <div id="profile-email">Loading...</div>
+                  </div>
+                </div>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="index.html">Home</a>
+                </li>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="journal.html"
+                    >Your Journals</a
+                  >
+                </li>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="#">User Settings</a>
+                </li>
+                <div class="footer">
+                  <li class="user-menu__item">
+                    <a
+                      class="user-menu-link"
+                      href="#"
+                      id="logoutBtn"
+                      style="color: #f44336"
+                      >Logout</a
+                    >
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <div id="map"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script type="module" src="trail.js"></script>
+  </body>
+</html>

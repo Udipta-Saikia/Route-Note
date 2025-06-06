@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Track Your Journey</title>
+
+    <!-- Fonts & Icons -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css"
+    />
+    <link rel="stylesheet" href="track.css" />
+  </head>
+
+  <body>
+    
+    <!-- Header Section -->
+    <header class="top-nav" id="navbar">
+      <div class="logo" onclick="location.href = 'journal.html'">Route-Note</div>
+      <div  class="nav-links">
+        <div
+        class="nav-mini-btn"
+        onclick="window.location.href='journal.html'"
+        role="button"
+        aria-label="Go to Tracker Page"
+      >
+        Journals
+      </div>
+      </div>
+      
+      <div class="auth-container">
+        <div class="auth-box">
+          <div class="user-menu-wrap" id="profileMenu">
+            <div class="mini-photo-wrapper">
+              <img class="mini-photo" id="miniPhotoAvtar" />
+            </div>
+            <!--DROP DOWN MENU -->
+            <div class="menu-container" id="dropdownMenu">
+              <ul class="user-menu">
+                <div class="profile-highlight">
+                  <img
+                    id="profileAvatar"
+                    class="avatar-img"
+                    alt="User Avatar"
+                  />
+                  <div class="details">
+                    <div id="profile-name">Loading...</div>
+                    <div id="profile-email">Loading...</div>
+                  </div>
+                </div>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="trail.html">Journey Trail</a>
+                </li>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="journal.html"
+                    >Your Journals</a
+                  >
+                </li>
+                <li class="user-menu__item">
+                  <a class="user-menu-link" href="#">User Settings</a>
+                </li>
+                <div class="footer">
+                  <li class="user-menu__item">
+                    <a
+                      class="user-menu-link"
+                      href="#"
+                      id="logoutBtn"
+                      style="color: #f44336"
+                      >Logout</a
+                    >
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Overlay for account info toggle -->
+    <div class="overlay"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Left Side Form Section -->
+      <div class="left-side">
+        <div class="input-group">
+          <label for="placeInput">Enter Place Name</label>
+          <div class="input-wrapper">
+            <i class="fas fa-map-marker-alt"></i>
+            <input
+              type="text"
+              id="placeInput"
+              placeholder="Search for a place"
+            />
+          </div>
+          <button class="btn" onclick="searchPlace()">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+
+        <div class="input-group">
+          <label for="description">Enter Description</label>
+          <div class="input-wrapper">
+            <i class="fas fa-align-left"></i>
+            <textarea
+              id="description"
+              placeholder="Add your thoughts..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <label for="fileInput">Upload Images</label>
+          <div class="input-wrapper">
+            <i class="fas fa-image"></i>
+            <input type="file" id="fileInput" multiple />
+          </div>
+          <div class="drop-zone" id="dropZone">Drag & drop images here</div>
+        </div>
+
+        <!-- New input field for image URL -->
+        <div class="input-group">
+          <label for="imageUrlInput">Add Image URL</label>
+          <div class="input-wrapper">
+            <i class="fas fa-link"></i>
+            <input
+              type="text"
+              id="imageUrlInput"
+              placeholder="Add a URL for an image"
+            />
+          </div>
+        </div>
+        <button class="btn" onclick="saveToFirebase()" id="saveBtn" disabled>
+          Create
+        </button>
+      </div>
+
+      <!-- Right Side Map Section -->
+      <div class="right-side">
+        <div id="map"></div>
+        <div id="imagePreviewContainer"></div>
+      </div>
+    </div>
+
+    <!-- Firebase & Leaflet Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script type="module" src="track.js"></script>
+  </body>
+</html>

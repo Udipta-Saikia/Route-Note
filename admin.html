@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin - All Entries</title>
+  <link rel="stylesheet" href="admin.css">
+    <script type="module" src="admin.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Admin Dashboard</h1>
+    <div class="auth-container">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search by user email or username..."
+        aria-label="Search users"
+        autocomplete="off"
+      />
+      <button id="signOutBtn">Sign Out</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="journalEntries">Loading entries...</div>
+  </main>
+
+  <!-- Image modal -->
+  <div id="imgModal" aria-hidden="true" tabindex="-1">
+    <img src="" alt="Full size photo" />
+  </div>
+</body>
+</html>

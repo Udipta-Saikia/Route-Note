@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Route-Note</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="index.css">
+    
+</head>
+<body>
+
+  <div class="message-wrapper" id="messageWrapper">
+    <div id="signUpMessage" class="message-box"></div>
+    <div id="signInMessage" class="message-box"></div>
+    <div id="globalMessage" class="message-box"></div>
+  </div>
+  
+
+  <header class="top-nav" id="navbar">
+    <div class="logo" onclick="location.href = '#'">Route-Note</div>
+    <div class="nav-links">
+      <div class="nav-mini-btn" id="scrollToPreview">Preview</div>
+      <div class="nav-mini-btn" id="scrollToFuture">Future</div>
+      <div class="nav-mini-btn" id="scrollTovisited">Explore</div>
+    </div>
+    
+    <div class="auth-container">
+      <div class="auth-box" id="scrollToSignInBtn">
+        <span>Get Started.</span>
+      </div>
+      <div class="auth-box" id="scrollToAboutUs">
+        <span>About Us.</span>
+      </div>
+    </div>
+    
+    </div>
+  </header>
+
+  <!-- Header Section -->
+  <section id="header">
+    <h2 class="fade-left">Capture Your Journeys</h2>
+    <h2 class="fade-left">One Pin At A Time</h2>
+    <p class="fade-left">Map Your Travels , Upload Photos and Relive Memories
+    </p>
+    </section>
+
+  <!-- Description Section -->
+  <section id="description-section">
+    <p class="description fade-right">Route-Note: A Journey Worth Mapping
+
+      Route-Note is more than a travel journal — it's a personal archive of adventures.
+      Every destination becomes a note in the melody of your travels, each pin on the map a heartbeat frozen in time.
+      With intuitive features to mark locations, upload photos, and write about your experiences, this platform transforms memories into a visual story.
+      
+      Whether you’re wandering sunlit coastlines, trekking mountain trails, or rediscovering your hometown, Route-Note helps you trace your path and relive every step.
+      Let your map grow with you — one journey, one story, one memory at a time.
+    </p>
+  </section>
+  <section id="sbg">
+    <section id="login" class="section fade-in">
+  
+      <!-- Login Form -->
+      <div class="form-container" id="loginForm">
+        <h2>Login</h2>
+  
+        <div class="input-group">
+          <input type="email" id="email" placeholder="Email" />
+        </div>
+  
+        <div class="input-group">
+          <input type="password" id="password" placeholder="Password" />
+          <i class="fa fa-eye toggle-password" data-toggle="password"></i>
+        </div>
+  
+        <button id="submitSignIn">Login</button>
+        <button id="googleSignIn">Login with Google</button>
+  
+        <p>Don't have an account? <a class="text-button" onclick="toggleForm('signup')">Sign Up</a></p>
+      </div>
+  
+      <!-- Sign Up Form -->
+      <div class="form-container" id="signUpContainer" style="display: none;">
+        <h2>Sign Up</h2>
+  
+        <div class="input-group">
+          <input type="text" id="fName" placeholder="Full Name" />
+        </div>
+  
+        <div class="input-group">
+          <input type="email" id="rEmail" placeholder="Email" />
+        </div>
+  
+        <div class="input-group">
+          <input type="password" id="rPassword" placeholder="Password" />
+          <i class="fa fa-eye toggle-password" data-toggle="rPassword"></i>
+        </div>
+  
+        <button id="submitSignUp">Sign Up</button>
+        <button id="googleSignUp">Sign Up with Google</button>
+  
+        <p>Already have an account? <a class="text-button" onclick="toggleForm('signin')">Login</a></p>
+      </div>
+    </section>
+  </section>
+  
+  <!-- Preview Section -->
+  <section class="preview-section">
+  <div class="preview-block" id="preview-map-interface"></div>
+  <div class="preview-block" id="preview-photo-upload"></div>
+  <div class="preview-block" id="preview-saved-locations"></div>
+  <div class="preview-block" id="preview-journey-timeline-1"></div>
+</section>
+
+
+    <!-- Future Improvements Section -->
+    <section class="future-section" >
+      <h2>Future Improvements</h2>
+      <ul>
+        <li>➤ Social sharing for trips and memories</li>
+        <li>➤ Location clustering on dense maps</li>
+        <li>➤ Personalized travel insights</li>
+        <li>➤ Offline trip tracking</li>
+      </ul>
+    </section>
+
+  <!-- Most Visited Section -->
+  <section class="most-visited-section">
+    Most Visited Locations (Coming Soon!)
+  </section>
+
+  <!-- About Us Section -->
+<section class="about-section">
+  <h2>About Us</h2>
+  <div class="about-box">
+    <div class="about-content">
+      <p class="text-lg md:text-xl text-gray-700 mb-6 text-center">
+  We’re <strong class="text-indigo-600">Subham</strong>, <strong class="text-indigo-600">Sumant</strong>, and <strong class="text-indigo-600">Udipta</strong> — 6th-semester Computer Science students from Girijananda Chowdhury University. We built <strong class="text-indigo-600">Route-Note</strong> thinking it’d be easier than exams. (Spoiler: it wasn’t.)
+</p>
+
+<p class="text-lg md:text-xl text-gray-700 mb-6 text-center">
+  Like any curious explorer, we wanted more than just photos — we wanted to capture places, feelings, and stories. <strong class="text-indigo-600">Route-Note</strong> became our way to map memories so they don't fade (unless we crash the database again).
+</p>
+
+<p class="text-lg md:text-xl text-gray-700 text-center">
+  Whether you're off on an epic adventure or a casual stroll, Route-Note lets you <strong class="text-indigo-600">pin locations</strong>, <strong class="text-indigo-600">save memories</strong>, and <strong class="text-indigo-600">relive your journey</strong>, one route at a time — built by travelers (who sometimes forget to travel) for travelers, from three students learning, coding, and surviving college one bug at a time.
+</p>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <div>© 2025 Route-Note. All rights reserved.</div>
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank">
+        <img src="img/instagram.svg" alt="Instagram" width="35" height="35" />
+      </a>
+      <a href="https://github.com" target="_blank">
+        <img src="img/github.svg" alt="GitHub" width="35" height="35" />
+      </a>
+    </div>
+  </footer>
+  
+  <script>
+    // Shrink navbar & scroll animations
+    const navbar = document.getElementById("navbar");
+    const fadeLefts = document.querySelectorAll(".fade-left");
+    const fadeRights = document.querySelectorAll(".fade-right");
+  
+    window.addEventListener("load", () => {
+      fadeLefts.forEach(el => el.classList.add("visible"));
+    });
+  
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("shrink");
+      } else {
+        navbar.classList.remove("shrink");
+      }
+  
+      fadeRights.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          el.classList.add("visible");
+        }
+      });
+    });
+  
+  // Toggle Login/Signup Forms
+    function toggleForm(targetForm = null) {
+  const loginForm = document.getElementById("loginForm");
+  const signUpForm = document.getElementById("signUpContainer");
+
+  if (targetForm === "signup" || (targetForm === null && loginForm.style.display !== "none")) {
+    loginForm.style.display = "none";
+    signUpForm.style.display = "block";
+  } else {
+    loginForm.style.display = "block";
+    signUpForm.style.display = "none";
+  }
+
+  if (targetForm) {
+    document.getElementById("login").scrollIntoView({ behavior: "smooth" });
+  }
+}
+// Attach scroll toggle events if buttons exist
+document.getElementById("scrollToSignInBtn")?.addEventListener("click", () => {
+  toggleForm("signin");
+});
+
+// Scroll to "Future Improvements" section
+document.getElementById("scrollToAboutUs")?.addEventListener("click", () => {
+  document.querySelector(".about-section").scrollIntoView({ behavior: "smooth" });
+});
+
+//password view toggle
+document.querySelectorAll(".toggle-password").forEach((eyeIcon) => {
+  eyeIcon.addEventListener("click", () => {
+    const targetId = eyeIcon.getAttribute("data-toggle");
+    const input = document.getElementById(targetId);
+    const isPassword = input.getAttribute("type") === "password";
+    input.setAttribute("type", isPassword ? "text" : "password");
+    eyeIcon.classList.toggle("fa-eye");
+    eyeIcon.classList.toggle("fa-eye-slash");
+  });
+});
+
+function showLoadingToast(message = "Loading...") {
+  const msgBox = document.getElementById("globalMessage");
+  msgBox.className = "message-box success"; // or a 'loading' class if you want a new style
+  msgBox.innerHTML = message;
+  msgBox.style.display = "block";
+  msgBox.style.opacity = 1;
+}
+
+function hideLoadingToast() {
+  const msgBox = document.getElementById("globalMessage");
+  msgBox.style.opacity = 0;
+  setTimeout(() => {
+    msgBox.style.display = "none";
+  }, 300);
+}
+
+function showCustomToast(message, redirectUrl = null) {
+  const msgBox = document.getElementById("globalMessage");
+  msgBox.className = "message-box success";
+  msgBox.innerHTML = message;
+  msgBox.style.display = "block";
+  msgBox.style.opacity = 1;
+
+  if (redirectUrl) {
+    // Wait a moment to show the message, then navigate
+    setTimeout(() => {
+      window.location.href = redirectUrl;
+    }, 1500); // ⏳ Adjust delay here if needed
+  } else {
+    // If no redirect, fade out after 3s
+    setTimeout(() => {
+      msgBox.style.opacity = 0;
+      setTimeout(() => {
+        msgBox.style.display = "none";
+      }, 300);
+    }, 3000);
+  }
+}
+document.getElementById("scrollToPreview")?.addEventListener("click", () => {
+  document.querySelector(".preview-section").scrollIntoView({ behavior: "smooth" });
+});
+document.getElementById("scrollToFuture")?.addEventListener("click", () => {
+  document.querySelector(".future-section").scrollIntoView({ behavior: "smooth" });
+});
+document.getElementById("scrollTovisited")?.addEventListener("click", () => {
+  document.querySelector(".most-visited-section").scrollIntoView({ behavior: "smooth" });
+});
+
+</script>
+  
+<script type="module" src="index.js"></script>
+</body>
+</html>
